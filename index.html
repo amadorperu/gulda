@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gulda | Líder en distribución ferretera</title>
+<meta name="description" content="Gulda & Cía: importación y distribución de productos ferreteros en Perú. Herramientas eléctricas y manuales, seguridad, iluminación y construcción para ferreterías de Lima y provincias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Tokens de marca Gulda ===== */
+:root{
+  --naranja:#ED681B; --naranja-osc:#BF5214; --naranja-cl:#FCE8DD;
+  --gris:#676767; --carbon:#3C3C3C; --gris-medio:#A1A2A3; --gris-fondo:#F2F2F2;
+  --bg:#FFFFFF; --surface:#F2F2F2; --surface-2:#FFFFFF; --tile:#F2F2F2;
+  --text:#3C3C3C; --heading:#676767; --muted:#676767; --line:#E3E3E3;
+  --accent-text:#BF5214; --tint:#FCE8DD;
+  --ill-body:#3C3C3C; --ill-metal:#A1A2A3; --ill-light:#FFFFFF; --ill-grip:#676767;
+  --dark-band:#3C3C3C;
+  --radius-s:8px; --radius:14px; --radius-l:22px;
+  --font-head:"Montserrat",Arial,"Helvetica Neue",sans-serif;
+  --font-body:"Open Sans",Arial,"Helvetica Neue",sans-serif;
+  --header-h:64px;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#2B2B2B; --surface:#3C3C3C; --surface-2:#353535; --tile:#4A4A4A;
+    --text:#EDEDED; --heading:#FFFFFF; --muted:#C4C4C4; --line:#4E4E4E;
+    --accent-text:#F59A62; --tint:#4A372B;
+    --ill-body:#262626; --ill-metal:#B9BABB; --ill-light:#E6E6E6; --ill-grip:#555;
+    --dark-band:#1F1F1F;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#2B2B2B; --surface:#3C3C3C; --surface-2:#353535; --tile:#4A4A4A;
+  --text:#EDEDED; --heading:#FFFFFF; --muted:#C4C4C4; --line:#4E4E4E;
+  --accent-text:#F59A62; --tint:#4A372B;
+  --ill-body:#262626; --ill-metal:#B9BABB; --ill-light:#E6E6E6; --ill-grip:#555;
+  --dark-band:#1F1F1F;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--font-head);color:var(--heading);line-height:1.15;margin:0}
+p{margin:0}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 18px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;background:var(--naranja);color:#fff;padding:10px 14px;border-radius:8px;z-index:200;font-weight:700}
+.skip:focus{top:12px}
+:focus-visible{outline:3px solid var(--naranja);outline-offset:2px;border-radius:4px}
+
+/* Kicker de marca: cuadro naranja redondeado + etiqueta */
+.kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-text);margin-bottom:12px}
+.kicker::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--naranja);flex:none}
+.h-sec{font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:800;letter-spacing:-.01em}
+.h-sec em{font-style:normal;color:var(--naranja)}
+.lead{color:var(--muted);max-width:60ch;margin-top:10px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;padding:13px 22px;font-family:var(--font-head);font-weight:700;font-size:.95rem;text-decoration:none;transition:background .2s,transform .15s,color .2s}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--naranja);color:#fff}
+.btn-primary:hover{background:var(--naranja-osc)}
+.btn-ghost{background:transparent;color:var(--heading);box-shadow:inset 0 0 0 2px var(--gris-medio)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--naranja);color:var(--accent-text)}
+.btn-light{background:#fff;color:var(--carbon)}
+.btn-light:hover{background:var(--naranja-cl)}
+
+/* ===== Barra superior ===== */
+.topbar{background:var(--carbon);color:#fff;font-size:.82rem}
+.topbar .wrap{display:flex;align-items:center;justify-content:center;min-height:38px;position:relative;gap:12px}
+.ticker{position:relative;height:22px;overflow:hidden;flex:1;text-align:center}
+.ticker span{position:absolute;inset:0;transition:transform .5s,opacity .5s;opacity:0;transform:translateY(100%)}
+.ticker span.on{opacity:1;transform:none}
+.ticker span.out{opacity:0;transform:translateY(-100%)}
+.ticker b{color:#F7A06B}
+.topbar .tb-links{display:none;gap:18px}
+.topbar a{text-decoration:none;opacity:.9}
+.topbar a:hover{opacity:1;color:#F7A06B}
+
+/* ===== Header ===== */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);transition:box-shadow .25s}
+.header.scrolled{box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.progress{position:absolute;left:0;bottom:-3px;height:3px;width:0;background:var(--naranja);z-index:2}
+.h-main{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:10px 0}
+.icon-btn{position:relative;display:inline-grid;place-items:center;width:44px;height:44px;border:0;background:transparent;color:var(--heading);border-radius:10px}
+.icon-btn:hover{background:var(--surface);color:var(--accent-text)}
+.icon-btn svg{width:24px;height:24px}
+.badge{position:absolute;top:3px;right:2px;min-width:19px;height:19px;padding:0 5px;border-radius:10px;background:var(--naranja);color:#fff;font-size:.7rem;font-weight:700;display:grid;place-items:center;font-family:var(--font-head)}
+.badge.bump{animation:bump .45s}
+@keyframes bump{40%{transform:scale(1.45)}}
+.logo{display:block;justify-self:center}
+.logo img{height:40px;width:auto;transition:height .25s}
+.header.scrolled .logo img{height:34px}
+.logo .neg{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo .col{display:none}:root:not([data-theme="light"]) .logo .neg{display:block}}
+:root[data-theme="dark"] .logo .col{display:none}:root[data-theme="dark"] .logo .neg{display:block}
+.h-icons{display:flex;gap:2px;justify-self:end}
+.h-icons .fav-btn,.h-icons .acct{display:none}
+.cart-total{display:none;font-family:var(--font-head);font-weight:700;font-size:.92rem;color:var(--heading);align-self:center;margin-left:4px}
+
+.search{position:relative;grid-column:1/-1}
+.search form{display:flex;border:2px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface-2);transition:border-color .2s}
+.search form:focus-within{border-color:var(--naranja)}
+.search input{flex:1;min-width:0;border:0;background:transparent;padding:11px 14px;font:inherit;color:var(--text)}
+.search input:focus{outline:none}
+.search button{border:0;background:var(--naranja);color:#fff;width:52px;display:grid;place-items:center}
+.search button:hover{background:var(--naranja-osc)}
+.search button svg{width:22px;height:22px}
+.suggest{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--surface-2);border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 40px rgba(0,0,0,.15);z-index:70;max-height:360px;overflow:auto;display:none}
+.suggest.open{display:block}
+.suggest button{display:flex;width:100%;gap:12px;align-items:center;padding:10px 12px;border:0;background:transparent;text-align:left;color:var(--text)}
+.suggest button:hover,.suggest button.act{background:var(--tint)}
+.suggest .s-ill{width:52px;height:42px;background:var(--tile);border-radius:8px;flex:none;display:grid;place-items:center}
+.suggest .s-ill svg{width:44px;height:36px}
+.suggest small{display:block;color:var(--muted);font-size:.78rem}
+.suggest mark{background:none;color:var(--accent-text);font-weight:700}
+.suggest .empty{padding:14px;color:var(--muted);font-size:.9rem}
+
+/* Nav naranja */
+.nav{background:var(--naranja);display:none}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:4px}
+.nav > .wrap > ul > li{position:relative}
+.nav a,.nav .dd-btn{display:flex;align-items:center;gap:6px;padding:13px 18px;color:#fff;text-decoration:none;font-family:var(--font-head);font-weight:700;font-size:.88rem;letter-spacing:.04em;text-transform:uppercase;background:none;border:0}
+.nav a:hover,.nav .dd-btn:hover,.nav .dd-btn[aria-expanded="true"]{background:var(--naranja-osc)}
+.nav .dd-btn svg{width:14px;height:14px;transition:transform .2s}
+.nav .dd-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.mega{position:absolute;top:100%;left:50%;transform:translate(-50%,8px);width:min(760px,92vw);background:var(--surface-2);border-radius:0 0 var(--radius) var(--radius);box-shadow:0 20px 50px rgba(0,0,0,.18);padding:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s;border-top:3px solid var(--naranja-osc)}
+.mega.open{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.mega a{color:var(--text);text-transform:none;letter-spacing:0;font-weight:600;font-family:var(--font-body);font-size:.95rem;border-radius:10px;padding:10px 12px;gap:12px}
+.mega a:hover{background:var(--tint);color:var(--accent-text)}
+.mega .m-ic{width:44px;height:36px;flex:none;background:var(--tile);border-radius:8px;display:grid;place-items:center}
+.mega .m-ic svg{width:38px;height:30px}
+
+/* Drawer móvil */
+.scrim{position:fixed;inset:0;background:rgba(20,20,20,.5);opacity:0;visibility:hidden;transition:.25s;z-index:90}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;bottom:0;width:min(88vw,380px);background:var(--bg);z-index:100;transition:transform .32s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.left{left:0;transform:translateX(-102%)}
+.drawer.right{right:0;transform:translateX(102%)}
+.drawer.open{transform:none}
+.dr-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--line)}
+.dr-head h2{font-size:1.15rem}
+.dr-body{flex:1;overflow:auto;padding:12px 16px}
+.mnav a{display:flex;align-items:center;gap:12px;padding:12px 6px;text-decoration:none;font-weight:600;border-bottom:1px solid var(--line)}
+.mnav a:hover{color:var(--accent-text)}
+.mnav .m-ic{width:40px;height:32px;background:var(--tile);border-radius:8px;display:grid;place-items:center;flex:none}
+.mnav .m-ic svg{width:34px;height:28px}
+.mnav h3{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-text);margin:18px 0 4px}
+.dr-contact{padding:16px;background:var(--surface);border-radius:var(--radius);margin-top:18px;font-size:.92rem}
+.dr-contact a{display:block;font-weight:700;text-decoration:none;margin-top:4px}
+
+/* ===== Hero slider ===== */
+.hero{position:relative;overflow:hidden;background:var(--surface)}
+.slides{display:flex;transition:transform .7s cubic-bezier(.65,0,.25,1);touch-action:pan-y}
+.slide{flex:0 0 100%;position:relative;overflow:hidden;min-height:560px;display:flex;align-items:center}
+.slide .wrap{position:relative;z-index:2;display:grid;gap:20px;padding-top:36px;padding-bottom:72px}
+.s-copy{max-width:560px}
+.s-title{font-size:clamp(2rem,8vw,3.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.05}
+.s-title em{font-style:normal;color:var(--naranja)}
+.s-text{margin-top:14px;color:var(--muted);font-size:1.05rem;max-width:46ch}
+.s-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.s-a{background:var(--bg)}
+.iso-bleed{position:absolute;right:-22%;bottom:-24%;width:min(110vw,640px);opacity:1;z-index:1;pointer-events:none}
+.s-a .wrap{align-content:start}
+.s-a .s-copy{position:relative;z-index:3}
+.s-b{background:var(--carbon);color:#fff}
+.s-b .s-title,.s-b h2{color:#fff}
+.s-b .s-text{color:#D9D9D9}
+.s-b .kicker{color:#F7A06B}
+.deal-flag{display:inline-block;background:var(--naranja);color:#fff;font-family:var(--font-head);font-weight:800;padding:8px 18px;border-radius:10px;font-size:clamp(1rem,3.5vw,1.3rem);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+.deal-brand{font-family:var(--font-head);font-weight:800;color:#F7A06B;font-size:1rem;letter-spacing:.08em;text-transform:uppercase}
+.price-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}
+.price-big{font-family:var(--font-head);font-weight:800;font-size:clamp(2rem,7vw,3rem);color:#fff}
+.price-old{color:#BDBDBD;text-decoration:line-through;font-size:1.05rem}
+.save{width:92px;height:92px;border-radius:50%;background:var(--naranja);display:grid;place-items:center;text-align:center;font-family:var(--font-head);font-weight:800;line-height:1.05;font-size:.82rem;color:#fff;transform:rotate(-8deg)}
+.save b{display:block;font-size:1.35rem}
+.countdown{display:flex;gap:8px;margin-top:18px}
+.countdown div{background:rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;min-width:62px;text-align:center}
+.countdown b{display:block;font-family:var(--font-head);font-size:1.5rem;color:#fff;font-variant-numeric:tabular-nums}
+.countdown small{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#C9C9C9}
+.s-ill{position:relative;z-index:2}
+.s-ill svg{width:100%;height:auto;max-height:300px}
+.s-b .s-ill{--ill-body:#1E1E1E;--ill-metal:#C7C8C9;--ill-light:#fff;--ill-grip:#555}
+.s-c{background:var(--surface)}
+.s-c .s-ill{--ill-body:var(--carbon)}
+.hero-ctrl{position:absolute;left:0;right:0;bottom:18px;z-index:5;display:flex;justify-content:center;align-items:center;gap:14px}
+.dots{display:flex;gap:8px}
+.dots button{width:12px;height:12px;border-radius:4px;border:0;background:var(--gris-medio);padding:0;transition:width .3s,background .3s}
+.dots button[aria-current="true"]{width:34px;background:var(--naranja)}
+.arrow{width:42px;height:42px;border-radius:12px;border:0;background:var(--surface-2);color:var(--heading);display:none;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.arrow:hover{background:var(--naranja);color:#fff}
+.arrow svg{width:20px;height:20px}
+.hero .bar{position:absolute;left:0;bottom:0;height:4px;background:var(--naranja);width:0;z-index:5}
+
+/* Animación de entrada del hero (un único momento) */
+.slide.active .s-copy > *{animation:rise .7s both}
+.slide.active .s-copy > *:nth-child(2){animation-delay:.08s}
+.slide.active .s-copy > *:nth-child(3){animation-delay:.16s}
+.slide.active .s-copy > *:nth-child(4){animation-delay:.24s}
+.slide.active .s-copy > *:nth-child(5){animation-delay:.32s}
+.slide.active .s-copy > *:nth-child(6){animation-delay:.4s}
+.slide.active .s-ill{animation:toolIn .9s .15s both}
+.slide.active .iso-bleed{animation:isoIn 1.1s both}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}}
+@keyframes toolIn{from{opacity:0;transform:translateX(60px) rotate(-6deg)}}
+@keyframes isoIn{from{opacity:0;transform:translate(60px,60px) scale(.9)}}
+
+/* Franja de beneficios */
+.perks{background:var(--bg);border-bottom:1px solid var(--line)}
+.perks ul{list-style:none;margin:0;padding:18px 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.perks li{display:flex;gap:12px;align-items:center;font-size:.9rem}
+.perks .p-ic{width:44px;height:44px;border-radius:12px;background:var(--tint);color:var(--accent-text);display:grid;place-items:center;flex:none}
+.perks .p-ic svg{width:24px;height:24px}
+.perks b{display:block;font-family:var(--font-head);color:var(--heading);font-size:.92rem}
+.perks span{color:var(--muted);font-size:.82rem;line-height:1.35;display:block}
+
+section{padding:56px 0}
+.sec-head{display:flex;flex-direction:column;gap:6px;margin-bottom:28px}
+
+/* ===== Categorías ===== */
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.cat{position:relative;display:flex;flex-direction:column;background:var(--surface);border-radius:var(--radius);padding:16px 14px 18px;text-decoration:none;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.cat::before{content:"";width:34px;height:4px;border-radius:2px;background:var(--naranja);margin-bottom:12px}
+.cat:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.cat .c-ill{height:96px;display:grid;place-items:center;margin-bottom:10px}
+.cat .c-ill svg{height:100%;width:auto;transition:transform .4s}
+.cat:hover .c-ill svg{transform:scale(1.08) rotate(-4deg)}
+.cat small{color:var(--muted);font-size:.8rem}
+.cat h3{font-size:1rem;margin-top:2px}
+.cat .c-go{margin-top:10px;font-family:var(--font-head);font-weight:700;font-size:.82rem;color:var(--accent-text)}
+.cat.featured{background:var(--naranja)}
+.cat.featured::before{background:#fff}
+.cat.featured h3,.cat.featured small,.cat.featured .c-go{color:#fff}
+.cat.featured .c-ill{--ill-body:#3C3C3C;--ill-metal:#fff;--ill-light:#fff;--ill-grip:#676767}
+
+/* ===== Productos ===== */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:var(--surface);color:var(--heading);border-radius:10px;padding:10px 16px;font-family:var(--font-head);font-weight:700;font-size:.85rem;transition:background .2s,color .2s}
+.tab:hover{color:var(--accent-text)}
+.tab[aria-selected="true"]{background:var(--naranja);color:#fff}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin:16px 0 20px;font-size:.88rem;color:var(--muted)}
+.sort{display:flex;align-items:center;gap:8px}
+.sort select{font:inherit;color:var(--text);background:var(--surface-2);border:2px solid var(--line);border-radius:10px;padding:8px 12px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{position:relative;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);display:flex;flex-direction:column;overflow:hidden;transition:border-color .2s,box-shadow .25s,transform .25s}
+.card:hover{border-color:var(--naranja);box-shadow:0 14px 30px rgba(0,0,0,.08)}
+.card.enter{animation:cardIn .45s both}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px) scale(.98)}}
+.card .ill{position:relative;background:var(--tile);aspect-ratio:5/4;display:grid;place-items:center;cursor:pointer;border:0;padding:8px;width:100%}
+.card .ill svg{width:88%;height:auto;transition:transform .4s}
+.card:hover .ill svg{transform:scale(1.06)}
+.tag{position:absolute;top:10px;left:10px;font-family:var(--font-head);font-weight:800;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:4px 8px;color:#fff;background:var(--gris)}
+.tag.off{background:var(--naranja-osc)}
+.heart{position:absolute;top:6px;right:6px;width:38px;height:38px;border:0;border-radius:10px;background:var(--surface-2);color:var(--gris);display:grid;place-items:center;transition:color .2s,transform .2s}
+.heart svg{width:20px;height:20px}
+.heart[aria-pressed="true"]{color:var(--naranja)}
+.heart[aria-pressed="true"] svg{fill:currentColor}
+.heart.pop{animation:bump .4s}
+.qv{position:absolute;left:50%;bottom:10px;transform:translate(-50%,10px);opacity:0;border:0;border-radius:8px;background:var(--carbon);color:#fff;font-size:.78rem;font-weight:700;padding:7px 12px;transition:.25s;font-family:var(--font-head)}
+.card:hover .qv,.qv:focus-visible{opacity:1;transform:translate(-50%,0)}
+.c-body{padding:12px 12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.c-brand{font-family:var(--font-head);font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text)}
+.c-name{font-family:var(--font-head);font-weight:700;font-size:.92rem;color:var(--heading);line-height:1.3}
+.c-price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:auto}
+.c-price b{font-family:var(--font-head);font-size:1.15rem;color:var(--text)}
+.c-price s{font-size:.82rem;color:var(--muted)}
+.stock{font-size:.76rem;color:var(--muted)}
+.stock .sb{height:5px;border-radius:3px;background:var(--line);margin-top:4px;overflow:hidden}
+.stock .sb i{display:block;height:100%;border-radius:3px;background:#5B9A3C;width:0;transition:width 1s .2s}
+.stock .sb i.low{background:var(--naranja)}
+.add{margin-top:8px;width:100%;padding:10px;font-size:.85rem}
+.add.done{background:var(--carbon)}
+.empty-grid{grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)}
+
+/* ===== Banners ===== */
+.banners{display:grid;gap:12px}
+.bn{position:relative;overflow:hidden;border-radius:var(--radius-l);background:var(--dark-band);color:#fff;padding:26px 22px;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;isolation:isolate}
+.bn h3{color:#F7A06B;font-size:clamp(1.3rem,4vw,1.8rem);font-weight:800;text-transform:uppercase;letter-spacing:.01em;max-width:14ch}
+.bn p{color:#E4E4E4;margin-top:4px;max-width:34ch;font-size:.95rem}
+.bn .btn{align-self:flex-start;margin-top:14px;padding:9px 16px;font-size:.82rem}
+.bn .bn-ill{position:absolute;right:-20px;top:10px;width:58%;max-width:300px;z-index:-1;opacity:.95;transition:transform .5s;--ill-body:#262626;--ill-metal:#C7C8C9;--ill-light:#fff;--ill-grip:#555}
+.bn:hover .bn-ill{transform:translateX(-8px) rotate(-3deg)}
+.bn .bn-iso{position:absolute;right:-60px;bottom:-70px;width:260px;opacity:.16;z-index:-1}
+.bn.or{background:var(--naranja)}
+.bn.or h3{color:#fff}
+.bn.or p{color:#fff}
+
+/* ===== Pasos ===== */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+.steps li{position:relative;background:var(--surface);border-radius:var(--radius);padding:20px 18px 20px 82px;counter-increment:s;min-height:96px}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:20px;width:48px;height:48px;border-radius:12px;background:var(--gris);color:#fff;font-family:var(--font-head);font-weight:800;font-size:1.3rem;display:grid;place-items:center}
+.steps li:last-child::before{background:var(--naranja)}
+.steps h3{font-size:1rem}
+.steps p{color:var(--muted);font-size:.92rem;margin-top:4px}
+
+/* ===== Marcas ===== */
+.brands{background:var(--surface);padding:44px 0}
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);margin-top:18px}
+.marquee ul{list-style:none;margin:0;padding:0;display:flex;gap:12px;width:max-content;animation:slide 40s linear infinite}
+.marquee:hover ul{animation-play-state:paused}
+.marquee li{flex:none;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:16px 26px;font-family:var(--font-head);font-weight:800;font-size:1.15rem;color:var(--heading);letter-spacing:.02em;transition:color .2s,border-color .2s}
+.marquee li:hover{color:var(--accent-text);border-color:var(--naranja)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ===== Contacto ===== */
+.contact{display:grid;gap:22px}
+.c-card{background:var(--carbon);color:#fff;border-radius:var(--radius-l);padding:28px 22px;position:relative;overflow:hidden}
+.c-card h2{color:#fff}
+.c-card .kicker{color:#F7A06B}
+.c-card ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:14px;position:relative;z-index:1}
+.c-card li{display:flex;gap:12px;align-items:flex-start}
+.c-card li svg{width:22px;height:22px;flex:none;color:#F7A06B;margin-top:2px}
+.c-card a{color:#fff;font-weight:700;text-decoration:none}
+.c-card a:hover{color:#F7A06B}
+.c-card small{display:block;color:#C9C9C9;font-size:.8rem}
+.c-card .bn-iso{position:absolute;right:-70px;bottom:-80px;width:280px;opacity:.14}
+.form{background:var(--surface);border-radius:var(--radius-l);padding:24px 20px;display:grid;gap:14px}
+.field{display:grid;gap:6px}
+.field label{font-family:var(--font-head);font-weight:700;font-size:.85rem;color:var(--heading)}
+.field input,.field textarea,.field select{font:inherit;color:var(--text);background:var(--surface-2);border:2px solid var(--line);border-radius:10px;padding:11px 12px;width:100%;transition:border-color .2s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--naranja)}
+.field.err input,.field.err textarea{border-color:#C0392B}
+.field .msg{font-size:.78rem;color:#C0392B;display:none}
+.field.err .msg{display:block}
+.row2{display:grid;gap:14px}
+
+/* ===== Footer ===== */
+.footer{background:var(--dark-band);color:#D9D9D9;padding:48px 0 calc(24px + env(safe-area-inset-bottom,0px));font-size:.92rem}
+.f-grid{display:grid;gap:28px}
+.footer img{height:46px;width:auto}
+.footer h4{color:#fff;font-size:.95rem;margin-bottom:12px}
+.footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.footer a{text-decoration:none;color:#D9D9D9}
+.footer a:hover{color:#F7A06B}
+.f-bottom{border-top:1px solid #4E4E4E;margin-top:34px;padding-top:18px;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;font-size:.8rem;color:#ABABAB}
+
+/* ===== Carrito ===== */
+.ci{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.ci .s-ill{width:64px;height:52px;background:var(--tile);border-radius:10px;display:grid;place-items:center}
+.ci .s-ill svg{width:56px;height:46px}
+.ci h4{font-size:.86rem;line-height:1.3}
+.ci small{color:var(--muted);font-size:.78rem}
+.qty{display:inline-flex;align-items:center;border:2px solid var(--line);border-radius:9px;margin-top:6px}
+.qty button{width:30px;height:30px;border:0;background:transparent;color:var(--heading);font-weight:700}
+.qty button:hover{color:var(--accent-text)}
+.qty span{min-width:28px;text-align:center;font-weight:700;font-size:.9rem}
+.ci .rm{border:0;background:none;color:var(--muted);font-size:.78rem;text-decoration:underline}
+.ci .line{font-family:var(--font-head);font-weight:700;text-align:right}
+.cart-empty{text-align:center;padding:40px 10px;color:var(--muted)}
+.cart-empty svg{width:64px;height:64px;color:var(--gris-medio);margin:0 auto 10px}
+.dr-foot{border-top:1px solid var(--line);padding:16px;display:grid;gap:10px}
+.dr-foot .tot{display:flex;justify-content:space-between;font-family:var(--font-head);font-weight:800;font-size:1.15rem;color:var(--heading)}
+.dr-foot small{color:var(--muted);font-size:.78rem}
+.dr-foot input{font:inherit;color:var(--text);background:var(--surface-2);border:2px solid var(--line);border-radius:10px;padding:10px 12px;width:100%}
+.dr-foot input:focus{outline:none;border-color:var(--naranja)}
+
+/* ===== Modal vista rápida ===== */
+dialog{border:0;border-radius:var(--radius-l);padding:0;width:min(92vw,820px);max-height:90vh;background:var(--bg);color:var(--text);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(20,20,20,.55)}
+dialog[open]{animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:scale(.94)}}
+.qv-grid{display:grid}
+.qv-ill{background:var(--tile);display:grid;place-items:center;padding:24px;min-height:220px}
+.qv-ill svg{width:100%;max-width:340px}
+.qv-info{padding:22px;display:flex;flex-direction:column;gap:10px}
+.qv-info h2{font-size:1.4rem}
+.qv-info ul{margin:0;padding-left:18px;color:var(--muted);font-size:.92rem}
+.qv-close{position:absolute;top:10px;right:10px;background:var(--surface-2)}
+.qv-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:6px}
+
+/* ===== Toast y flotantes ===== */
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);background:var(--carbon);color:#fff;border-radius:12px;padding:12px 18px;display:flex;gap:10px;align-items:center;z-index:120;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:transform .35s cubic-bezier(.2,.8,.2,1);font-size:.92rem;max-width:92vw}
+.toast.show{transform:translate(-50%,0)}
+.toast i{width:22px;height:22px;border-radius:6px;background:var(--naranja);display:grid;place-items:center;flex:none;font-style:normal;font-weight:800}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:16px;background:#25D366;color:#fff;display:grid;place-items:center;z-index:80;box-shadow:0 10px 24px rgba(0,0,0,.22);transition:transform .2s}
+.wa:hover{transform:scale(1.07)}
+.wa svg{width:30px;height:30px}
+.totop{position:fixed;right:16px;bottom:calc(84px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:12px;border:0;background:var(--surface-2);color:var(--heading);box-shadow:0 8px 20px rgba(0,0,0,.18);display:grid;place-items:center;z-index:80;opacity:0;visibility:hidden;transform:translateY(10px);transition:.25s}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop svg{width:22px;height:22px}
+.flyer{position:fixed;z-index:150;width:60px;height:48px;pointer-events:none;border-radius:10px;background:var(--tile);display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.flyer svg{width:52px;height:42px}
+
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+[data-reveal].in{opacity:1;transform:none}
+
+/* Ilustraciones SVG */
+.b{fill:var(--ill-body)}.m{fill:var(--ill-metal)}.l{fill:var(--ill-light)}.a{fill:var(--naranja)}.k{fill:var(--ill-grip)}.ao{fill:var(--naranja-osc)}
+.st{fill:none;stroke:var(--ill-body);stroke-width:3;stroke-linecap:round}
+
+/* ===== Breakpoints (mobile first) ===== */
+@media (min-width:640px){
+  .wrap{padding:0 24px}
+  .perks ul{grid-template-columns:repeat(4,1fr)}
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .grid{grid-template-columns:repeat(3,1fr);gap:16px}
+  .banners{grid-template-columns:1fr 1fr}
+  .banners .bn.tall{grid-row:span 2}
+  .row2{grid-template-columns:1fr 1fr}
+  .qv-grid{grid-template-columns:1fr 1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (min-width:960px){
+  .topbar .wrap{justify-content:space-between}
+  .ticker{flex:0 1 520px;text-align:left}
+  .topbar .tb-links{display:flex}
+  .h-main{grid-template-columns:auto minmax(280px,560px) auto;gap:28px;padding:16px 0}
+  .h-main .menu-btn{display:none}
+  .logo{justify-self:start}
+  .logo img{height:54px}
+  .header.scrolled .logo img{height:42px}
+  .search{grid-column:auto}
+  .h-icons .fav-btn,.h-icons .acct{display:inline-grid}
+  .cart-total{display:block}
+  .nav{display:block}
+  .slide{min-height:520px}
+  .slide .wrap{grid-template-columns:1.05fr .95fr;align-items:center;padding-top:40px;padding-bottom:70px}
+  .iso-bleed{right:-6%;bottom:-30%;width:620px}
+  .s-a .wrap{align-content:center}
+  .arrow{display:grid}
+  .cats{grid-template-columns:repeat(5,1fr);gap:16px}
+  .grid{grid-template-columns:repeat(4,1fr);gap:18px}
+  .banners{grid-template-columns:1.1fr 1fr 1fr}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .steps li{padding:84px 18px 22px}
+  .contact{grid-template-columns:.9fr 1.1fr}
+  .f-grid{grid-template-columns:1.4fr 1fr 1fr 1.2fr}
+  section{padding:72px 0}
+}
+@media (min-width:1200px){
+  .grid{grid-template-columns:repeat(5,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .marquee ul{animation:none;flex-wrap:wrap;width:auto;justify-content:center}
+  .marquee ul li[aria-hidden]{display:none}
+  [data-reveal]{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+
+<!-- Barra superior -->
+<div class="topbar" role="region" aria-label="Avisos">
+  <div class="wrap">
+    <div class="ticker" aria-live="polite">
+      <span class="on">Un solo proveedor, <b>todas las marcas</b> para tu ferretería</span>
+      <span>Despacho programado en <b>Lima y provincias</b></span>
+      <span>Pedidos por WhatsApp al <b>924 610 434</b></span>
+    </div>
+    <div class="tb-links">
+      <a href="tel:016176900">Central 01 617 6900</a>
+      <a href="#contacto">Hazte cliente</a>
+      <a href="#pasos">Cómo comprar</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header" id="header">
+  <div class="wrap h-main">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Abrir menú" aria-controls="menuDrawer" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+    </button>
+    <a class="logo" href="#inicio" aria-label="Gulda, inicio">
+      <img class="col" src="data:image/webp;base64,{{LOGO_COLOR}}" alt="Gulda. Líder en distribución ferretera" width="700" height="221">
+      <img class="neg" src="data:image/webp;base64,{{LOGO_NEG}}" alt="Gulda. Líder en distribución ferretera" width="700" height="221">
+    </a>
+    <div class="search" id="search">
+      <form role="search" id="searchForm">
+        <label class="sr" for="q">Buscar en el catálogo</label>
+        <input id="q" type="search" placeholder="Busca taladros, winchas, EPP, marcas…" autocomplete="off" aria-autocomplete="list" aria-controls="suggest" aria-expanded="false">
+        <button type="submit" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      </form>
+      <div class="suggest" id="suggest" role="listbox" aria-label="Sugerencias"></div>
+    </div>
+    <div class="h-icons">
+      <a class="icon-btn acct" href="#contacto" aria-label="Hazte cliente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+      </a>
+      <button class="icon-btn fav-btn" id="favBtn" aria-label="Ver favoritos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+        <span class="badge" id="favCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Ver pedido" aria-controls="cartDrawer" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1.3"/><circle cx="17" cy="20.5" r="1.3"/></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <span class="cart-total" id="cartTotalTop">S/ 0.00</span>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Principal">
+    <div class="wrap">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li>
+          <button class="dd-btn" id="megaBtn" aria-expanded="false" aria-controls="mega">Categorías
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="mega" id="mega"></div>
+        </li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#marcas">Marcas</a></li>
+        <li><a href="#pasos">Cómo comprar</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="progress" id="progress"></div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="inicio" aria-roledescription="carrusel" aria-label="Destacados" style="padding:0">
+  <div class="slides" id="slides">
+    <!-- Slide 1 -->
+    <div class="slide s-a active" role="group" aria-roledescription="diapositiva" aria-label="1 de 3">
+      <svg class="iso-bleed" viewBox="32 30 650 652" aria-hidden="true"><defs><clipPath id="sqA"><path d="M122 30 H682 V592 Q682 682 592 682 H32 V120 Q32 30 122 30 Z"/></clipPath></defs><g clip-path="url(#sqA)"><rect x="32" y="30" width="650" height="652" fill="#ED681B"/><rect x="465" y="30" width="217" height="218" fill="#676767"/></g><circle cx="470" cy="246" r="222" fill="#FFFFFF"/><circle cx="470" cy="248" r="126" fill="#676767"/><polygon points="435,230 492,287 633,146 576,89" fill="#FFFFFF"/></svg>
+      <div class="wrap">
+        <div class="s-copy">
+          <span class="kicker">Distribución ferretera</span>
+          <h1 class="s-title">Tu ferretería abastecida <em>a tiempo</em></h1>
+          <p class="s-text">Importamos y distribuimos herramientas, seguridad, iluminación y construcción para ferreterías de todo el Perú. Un solo proveedor, todas las marcas.</p>
+          <div class="s-cta">
+            <a class="btn btn-primary" href="#productos">Ver catálogo</a>
+            <a class="btn btn-ghost" href="#contacto">Hazte cliente</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 2: Oferta del día -->
+    <div class="slide s-b" role="group" aria-roledescription="diapositiva" aria-label="2 de 3">
+      <div class="wrap">
+        <div class="s-copy">
+          <span class="deal-flag">Oferta del día</span>
+          <span class="deal-brand">DeWalt</span>
+          <h2 class="s-title">Taladro percutor inalámbrico 20V</h2>
+          <p class="s-text">Batería de litio, mandril de 1/2" y percusión para concreto. Stock listo para despacho.</p>
+          <div class="price-row">
+            <span class="price-big">S/ 689.90</span>
+            <span class="price-old">S/ 799.90</span>
+            <span class="save">Ahorra<b>S/ 110</b></span>
+          </div>
+          <div class="countdown" id="countdown" aria-label="Tiempo restante de la oferta">
+            <div><b data-u="h">00</b><small>Horas</small></div>
+            <div><b data-u="m">00</b><small>Min</small></div>
+            <div><b data-u="s">00</b><small>Seg</small></div>
+          </div>
+          <div class="s-cta"><button class="btn btn-primary" data-add="1">Agregar al pedido</button></div>
+        </div>
+        <div class="s-ill" data-ill="drill" aria-hidden="true"></div>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="slide s-c" role="group" aria-roledescription="diapositiva" aria-label="3 de 3">
+      <div class="wrap">
+        <div class="s-copy">
+          <span class="kicker">Logística</span>
+          <h2 class="s-title">Despacho programado en <em>Lima y provincias</em></h2>
+          <p class="s-text">Arma tu pedido, confirmamos stock y precio con tu asesor y coordinamos la entrega en tu local.</p>
+          <div class="s-cta">
+            <a class="btn btn-primary" href="#pasos">Cómo comprar</a>
+            <a class="btn btn-ghost" href="https://wa.me/51924610434" target="_blank" rel="noopener">Escríbenos</a>
+          </div>
+        </div>
+        <div class="s-ill" data-ill="truck" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-ctrl">
+    <button class="arrow" id="prev" aria-label="Diapositiva anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="m15 6-6 6 6 6"/></svg></button>
+    <div class="dots" id="dots"></div>
+    <button class="arrow" id="next" aria-label="Diapositiva siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></button>
+  </div>
+  <div class="bar" id="heroBar"></div>
+</section>
+
+<!-- Beneficios -->
+<div class="perks">
+  <div class="wrap">
+    <ul>
+      <li><span class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span><div><b>Despacho programado</b><span>Lima y provincias</span></div></li>
+      <li><span class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span><div><b>Importación directa</b><span>Stock en almacén</span></div></li>
+      <li><span class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>Marcas con respaldo</b><span>Garantía de fábrica</span></div></li>
+      <li><span class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8M8 13h5"/></svg></span><div><b>Asesor comercial</b><span>Atención por WhatsApp</span></div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Categorías -->
+<section id="categorias">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="kicker">Categorías</span>
+      <h2 class="h-sec">Todo lo que vende <em>tu ferretería</em></h2>
+    </div>
+    <div class="cats" id="cats"></div>
+  </div>
+</section>
+
+<!-- Productos -->
+<section id="productos" style="padding-top:8px">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="kicker">Catálogo</span>
+      <h2 class="h-sec">Productos <em>destacados</em></h2>
+      <p class="lead">Precios referenciales por unidad. Tu asesor confirma precio por volumen y stock al recibir tu pedido.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Filtrar por categoría" id="tabs"></div>
+    <div class="toolbar">
+      <span id="countLabel" aria-live="polite"></span>
+      <div class="sort">
+        <label for="sort">Ordenar por</label>
+        <select id="sort">
+          <option value="rel">Relevancia</option>
+          <option value="asc">Precio: menor a mayor</option>
+          <option value="desc">Precio: mayor a menor</option>
+          <option value="name">Nombre</option>
+          <option value="brand">Marca</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" id="grid" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- Banners -->
+<section style="padding-top:0">
+  <div class="wrap banners">
+    <a class="bn tall" href="#productos" data-tab="electricas" data-reveal>
+      <div class="bn-ill" data-ill="hammerdrill" aria-hidden="true" style="top:20px;width:80%;max-width:380px"></div>
+      <h3>Herramientas eléctricas</h3>
+      <p>Taladros, amoladoras, sierras y rotomartillos de las marcas que piden tus clientes.</p>
+      <span class="btn btn-primary">Ver productos</span>
+    </a>
+    <a class="bn" href="#productos" data-tab="seguridad" data-reveal>
+      <div class="bn-ill" data-ill="helmet" aria-hidden="true"></div>
+      <h3>Seguridad en obra</h3>
+      <p>Respiradores, lentes y EPP para tu cliente constructor.</p>
+      <span class="btn btn-primary">Ver EPP</span>
+    </a>
+    <a class="bn or" href="#marcas" data-reveal>
+      <svg class="bn-iso" viewBox="32 30 650 652" aria-hidden="true"><path fill="#fff" d="M122 30 H682 V592 Q682 682 592 682 H32 V120 Q32 30 122 30 Z"/></svg>
+      <h3>Un solo proveedor</h3>
+      <p>Todas las marcas en un pedido, una factura y un despacho.</p>
+      <span class="btn btn-light">Ver marcas</span>
+    </a>
+    <a class="bn" href="#productos" data-tab="manuales" data-reveal style="grid-column:1/-1">
+      <div class="bn-ill" data-ill="wrench" aria-hidden="true" style="width:40%"></div>
+      <h3>Herramientas manuales</h3>
+      <p>Winchas, martillos, alicates, llaves y limas para reponer tu mostrador.</p>
+      <span class="btn btn-primary">Reponer stock</span>
+    </a>
+  </div>
+</section>
+
+<!-- Pasos -->
+<section id="pasos" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="kicker">Cómo comprar</span>
+      <h2 class="h-sec">De tu pedido <em>a tu mostrador</em></h2>
+    </div>
+    <ol class="steps">
+      <li data-reveal><h3>Regístrate como cliente</h3><p>Déjanos los datos de tu ferretería y un asesor te contacta.</p></li>
+      <li data-reveal><h3>Arma tu pedido</h3><p>Elige productos en el catálogo y envía la lista por WhatsApp.</p></li>
+      <li data-reveal><h3>Confirmamos stock y precio</h3><p>Tu asesor valida disponibilidad y precio por volumen.</p></li>
+      <li data-reveal><h3>Recibe en tu local</h3><p>Coordinamos el despacho en Lima y provincias.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Marcas -->
+<section class="brands" id="marcas">
+  <div class="wrap">
+    <div class="sec-head" data-reveal style="margin-bottom:0">
+      <span class="kicker">Marcas</span>
+      <h2 class="h-sec">Las marcas que <em>piden tus clientes</em></h2>
+    </div>
+  </div>
+  <div class="marquee" aria-label="Marcas distribuidas"><ul id="brandList"></ul></div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto">
+  <div class="wrap contact">
+    <div class="c-card" data-reveal>
+      <svg class="bn-iso" viewBox="32 30 650 652" aria-hidden="true"><path fill="#fff" d="M122 30 H682 V592 Q682 682 592 682 H32 V120 Q32 30 122 30 Z"/></svg>
+      <span class="kicker">Contacto</span>
+      <h2 class="h-sec">Hablemos de <em style="color:#F7A06B">tu ferretería</em></h2>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg><div><small>WhatsApp pedidos</small><a href="https://wa.me/51924610434" target="_blank" rel="noopener">924 610 434</a></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><div><small>Central telefónica</small><a href="tel:016176900">01 617 6900</a></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><small>Oficina</small><a href="https://www.google.com/maps/search/?api=1&query=Calle+Electra+165+La+Campi%C3%B1a+Chorrillos+Lima" target="_blank" rel="noopener">Calle Electra 165, Urb. La Campiña, Chorrillos, Lima</a></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg><div><small>Razón social</small><span>Gulda &amp; Cía S.A.C. · RUC 20100052564</span></div></li>
+      </ul>
+    </div>
+    <form class="form" id="leadForm" novalidate data-reveal>
+      <div>
+        <span class="kicker">Hazte cliente</span>
+        <h2 class="h-sec" style="font-size:1.5rem">Abre tu cuenta ferretera</h2>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="fName">Nombre y apellido</label><input id="fName" required autocomplete="name"><span class="msg">Escribe tu nombre.</span></div>
+        <div class="field"><label for="fStore">Ferretería o empresa</label><input id="fStore" required autocomplete="organization"><span class="msg">Escribe el nombre de tu negocio.</span></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="fRuc">RUC</label><input id="fRuc" inputmode="numeric" maxlength="11" pattern="\d{11}" placeholder="11 dígitos"><span class="msg">El RUC tiene 11 dígitos.</span></div>
+        <div class="field"><label for="fPhone">Celular</label><input id="fPhone" required inputmode="tel" autocomplete="tel" placeholder="9 dígitos"><span class="msg">Escribe un celular de 9 dígitos.</span></div>
+      </div>
+      <div class="field"><label for="fCity">Ciudad</label>
+        <select id="fCity"><option>Lima Metropolitana</option><option>Callao</option><option>Arequipa</option><option>Trujillo</option><option>Chiclayo</option><option>Piura</option><option>Cusco</option><option>Huancayo</option><option>Ica</option><option>Otra ciudad</option></select>
+      </div>
+      <div class="field"><label for="fMsg">¿Qué necesitas abastecer?</label><textarea id="fMsg" rows="3" placeholder="Ejemplo: herramientas eléctricas y EPP para obra"></textarea></div>
+      <button class="btn btn-primary" type="submit">Enviar por WhatsApp</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <img src="data:image/webp;base64,{{LOGO_NEG}}" alt="Gulda. Líder en distribución ferretera" width="700" height="221">
+        <p style="margin-top:14px;max-width:36ch">Importación y distribución de productos ferreteros para ferreterías de Lima y provincias.</p>
+      </div>
+      <div><h4>Catálogo</h4><ul id="footCats"></ul></div>
+      <div><h4>Gulda</h4><ul><li><a href="#pasos">Cómo comprar</a></li><li><a href="#marcas">Marcas</a></li><li><a href="#contacto">Hazte cliente</a></li><li><a href="#inicio">Inicio</a></li></ul></div>
+      <div><h4>Atención</h4><ul>
+        <li><a href="https://wa.me/51924610434" target="_blank" rel="noopener">WhatsApp 924 610 434</a></li>
+        <li><a href="tel:016176900">Central 01 617 6900</a></li>
+        <li>Calle Electra 165, Urb. La Campiña, Chorrillos, Lima</li>
+      </ul></div>
+    </div>
+    <div class="f-bottom"><span>© <span id="yr"></span> Gulda &amp; Cía S.A.C. RUC 20100052564</span><span>Líder en distribución ferretera</span></div>
+  </div>
+</footer>
+
+<!-- Drawer menú -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer left" id="menuDrawer" aria-label="Menú" aria-hidden="true">
+  <div class="dr-head"><h2>Menú</h2><button class="icon-btn" data-close aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="dr-body mnav" id="mnav"></div>
+</aside>
+
+<!-- Drawer pedido -->
+<aside class="drawer right" id="cartDrawer" aria-label="Tu pedido" aria-hidden="true">
+  <div class="dr-head"><h2>Tu pedido</h2><button class="icon-btn" data-close aria-label="Cerrar pedido"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="dr-body" id="cartBody"></div>
+  <div class="dr-foot" id="cartFoot">
+    <div class="tot"><span>Total referencial</span><span id="cartTotal">S/ 0.00</span></div>
+    <small>Tu asesor confirma precio por volumen, stock y fecha de despacho.</small>
+    <label class="sr" for="cartStore">Nombre de tu ferretería</label>
+    <input id="cartStore" placeholder="Nombre de tu ferretería">
+    <button class="btn btn-primary" id="sendOrder">Enviar pedido por WhatsApp</button>
+    <button class="btn btn-ghost" id="clearCart">Vaciar pedido</button>
+  </div>
+</aside>
+
+<!-- Vista rápida -->
+<dialog id="qvDialog" aria-labelledby="qvTitle">
+  <div class="qv-grid" id="qvContent"></div>
+  <button class="icon-btn qv-close" id="qvClose" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</dialog>
+
+<div class="toast" id="toast" role="status"><i>✓</i><span id="toastMsg"></span></div>
+<button class="totop" id="totop" aria-label="Volver arriba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="m6 15 6-6 6 6"/></svg></button>
+<a class="wa" href="https://wa.me/51924610434" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+
+<script>
+(function(){
+"use strict";
+var WA = "51924610434";
+var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $ = function(s,c){return (c||document).querySelector(s)};
+var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+/* ---------- Ilustraciones SVG de herramientas ---------- */
+var V = 'viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg"';
+var ILL = {
+ drill:'<svg '+V+'><rect class="m" x="148" y="58" width="40" height="7" rx="3"/><rect class="m" x="128" y="50" width="24" height="23" rx="4"/><rect class="b" x="122" y="47" width="10" height="29" rx="3"/><rect class="a" x="34" y="38" width="94" height="44" rx="16"/><rect class="b" x="28" y="44" width="22" height="32" rx="10"/><rect class="ao" x="60" y="44" width="40" height="6" rx="3"/><path class="b" d="M68 78h38l-7 46H74z"/><rect class="k" x="104" y="84" width="9" height="15" rx="3"/><rect class="b" x="54" y="120" width="68" height="26" rx="7"/><rect class="a" x="62" y="127" width="26" height="5" rx="2.5"/><rect class="k" x="62" y="136" width="52" height="4" rx="2"/></svg>',
+ grinder:'<svg '+V+'><rect class="k" x="68" y="36" width="10" height="38" rx="5"/><rect class="b" x="22" y="68" width="122" height="38" rx="18"/><rect class="a" x="36" y="73" width="62" height="28" rx="12"/><rect class="b" x="40" y="80" width="14" height="14" rx="3"/><rect class="b" x="140" y="62" width="22" height="40" rx="6"/><path class="m" d="M128 112a42 42 0 0 1 64-36l-8 10a30 30 0 0 0-44 26z"/><rect class="m" x="126" y="110" width="70" height="8" rx="4"/><circle class="b" cx="161" cy="114" r="5"/></svg>',
+ saw:'<svg '+V+'><circle class="m" cx="96" cy="98" r="46"/><circle cx="96" cy="98" r="46" fill="none" class="st" stroke-dasharray="4 6" style="stroke:var(--ill-light);stroke-width:4"/><circle class="l" cx="96" cy="98" r="10"/><path class="a" d="M46 98a50 50 0 0 1 100 0z"/><rect class="b" x="30" y="114" width="140" height="10" rx="4"/><path class="b" d="M88 44h42c10 0 16 6 16 16v22h-18V62H88z"/><rect class="k" x="118" y="62" width="8" height="14" rx="3"/><rect class="b" x="40" y="70" width="16" height="30" rx="6"/></svg>',
+ jigsaw:'<svg '+V+'><path class="a" d="M40 60c0-18 14-30 32-30h70c14 0 22 8 22 22v34H40z"/><path class="l" d="M74 48h56c6 0 10 4 10 10v8H64v-8c0-6 4-10 10-10z"/><rect class="b" x="40" y="84" width="124" height="22" rx="6"/><rect class="m" x="60" y="106" width="8" height="38" rx="2"/><rect class="b" x="30" y="104" width="100" height="8" rx="3"/><rect class="b" x="150" y="54" width="18" height="34" rx="6"/></svg>',
+ hammerdrill:'<svg '+V+'><rect class="m" x="160" y="62" width="34" height="7" rx="3"/><rect class="m" x="140" y="54" width="24" height="22" rx="5"/><rect class="b" x="30" y="44" width="114" height="40" rx="14"/><rect class="a" x="40" y="48" width="70" height="32" rx="10"/><rect class="b" x="118" y="40" width="12" height="48" rx="3"/><path class="b" d="M30 60c-14 0-22 10-22 24v34c0 8 6 14 14 14h18V84z"/><rect class="k" x="38" y="92" width="10" height="16" rx="3"/><rect class="k" x="124" y="84" width="12" height="46" rx="6" transform="rotate(14 130 104)"/><rect class="b" x="20" y="126" width="40" height="10" rx="4"/></svg>',
+ tape:'<svg '+V+'><rect class="a" x="34" y="36" width="92" height="92" rx="22"/><rect class="b" x="34" y="104" width="92" height="24" rx="10"/><circle class="b" cx="80" cy="78" r="26"/><circle class="m" cx="80" cy="78" r="9"/><rect class="k" x="40" y="44" width="20" height="10" rx="4"/><path class="l" d="M124 106h52v14h-52z"/><path class="st" d="M134 106v6M144 106v4M154 106v6M164 106v4M174 106v6" style="stroke-width:2"/><rect class="b" x="174" y="102" width="8" height="22" rx="2"/></svg>',
+ hammer:'<svg '+V+'><g transform="rotate(-28 100 84)"><rect class="k" x="92" y="60" width="16" height="90" rx="7"/><rect class="a" x="91" y="98" width="18" height="52" rx="8"/><rect class="b" x="91" y="104" width="18" height="4"/><path class="m" d="M56 34h56v28H56c-6 0-10-4-10-10v-8c0-6 4-10 10-10z"/><path class="m" d="M112 38c22 0 38 8 46 22l-8 6c-8-10-20-14-38-14z"/><rect class="b" x="40" y="38" width="10" height="20" rx="3"/></g></svg>',
+ screw:'<svg '+V+'><g><rect class="m" x="44" y="22" width="6" height="56" rx="3"/><rect class="a" x="36" y="76" width="22" height="64" rx="9"/><rect class="b" x="36" y="96" width="22" height="6"/></g><g><rect class="m" x="90" y="14" width="7" height="64" rx="3"/><rect class="b" x="82" y="76" width="24" height="68" rx="10"/><rect class="a" x="82" y="98" width="24" height="7"/></g><g><rect class="m" x="138" y="30" width="6" height="48" rx="3"/><rect class="a" x="130" y="76" width="22" height="60" rx="9"/><rect class="b" x="130" y="94" width="22" height="6"/></g></svg>',
+ pliers:'<svg '+V+'><path class="m" d="M88 18c8-4 18 0 20 10l4 30-14 6-12-30c-2-6-2-12 2-16z"/><path class="m" d="M128 22c-8-2-16 4-16 12l-2 30 14 4 10-30c2-8 0-14-6-16z"/><circle class="b" cx="110" cy="70" r="10"/><circle class="m" cx="110" cy="70" r="4"/><path class="a" d="M100 78l-34 64c-2 4 2 8 6 6 2-1 3-2 4-4l34-58z"/><path class="b" d="M118 78l20 66c1 4 6 5 8 2 1-1 1-3 1-5l-18-62z"/></svg>',
+ wrench:'<svg '+V+'><g transform="rotate(-30 100 80)"><rect class="m" x="40" y="72" width="120" height="14" rx="7"/><path class="m" d="M150 79a20 20 0 1 0 0-1zM160 70l14-10v38l-14-10z"/><circle class="l" cx="148" cy="79" r="8"/><circle class="m" cx="40" cy="79" r="18"/><circle class="l" cx="40" cy="79" r="9"/></g><g transform="rotate(-30 100 110)"><rect class="a" x="54" y="104" width="100" height="12" rx="6"/><circle class="a" cx="54" cy="110" r="15"/><circle class="l" cx="54" cy="110" r="7"/><path class="a" d="M150 100h22l-6 10 6 10h-22z"/></g></svg>',
+ file:'<svg '+V+'><g transform="rotate(-24 100 80)"><path class="m" d="M30 70h112l12 10-12 10H30z"/><path class="st" d="M40 70l6 20M52 70l6 20M64 70l6 20M76 70l6 20M88 70l6 20M100 70l6 20M112 70l6 20M124 70l6 20" style="stroke:var(--ill-light);stroke-width:2"/><rect class="b" x="154" y="76" width="14" height="8" rx="2"/><rect class="a" x="166" y="68" width="36" height="24" rx="10"/></g></svg>',
+ shovel:'<svg '+V+'><g transform="rotate(-36 100 80)"><rect class="k" x="94" y="10" width="12" height="86" rx="5"/><path class="b" d="M84 8h32v10H84z"/><path class="a" d="M88 2h24v10H88z"/><path class="m" d="M78 96h44v24c0 16-10 30-22 34-12-4-22-18-22-34z"/><rect class="b" x="94" y="90" width="12" height="12" rx="2"/></g></svg>',
+ cartridge:'<svg '+V+'><g transform="rotate(-20 100 80)"><rect class="l" x="44" y="56" width="104" height="44" rx="8" style="stroke:var(--ill-metal);stroke-width:3"/><rect class="a" x="62" y="56" width="60" height="44"/><rect class="b" x="70" y="68" width="44" height="6" rx="3"/><rect class="b" x="70" y="80" width="30" height="5" rx="2.5"/><rect class="m" x="34" y="60" width="12" height="36" rx="3"/><path class="m" d="M148 66h10l30 10v4l-30 10h-10z"/></g></svg>',
+ mask:'<svg '+V+'><path class="m" d="M100 28c26 0 44 18 44 46 0 26-18 46-44 50-26-4-44-24-44-50 0-28 18-46 44-46z"/><path class="b" d="M100 54c16 0 26 10 26 24 0 16-10 28-26 30-16-2-26-14-26-30 0-14 10-24 26-24z"/><circle class="a" cx="58" cy="100" r="22"/><circle class="b" cx="58" cy="100" r="12"/><circle class="a" cx="142" cy="100" r="22"/><circle class="b" cx="142" cy="100" r="12"/><path class="st" d="M56 60C30 64 22 84 26 104M144 60c26 4 34 24 30 44" style="stroke-width:4"/></svg>',
+ glasses:'<svg '+V+'><path class="m" d="M24 62c50-10 102-10 152 0v8H24z"/><path class="l" d="M28 70h66c2 22-8 38-30 38-24 0-36-14-36-38zM106 70h66c0 24-12 38-36 38-22 0-32-16-30-38z" style="stroke:var(--ill-body);stroke-width:4;fill-opacity:.85"/><path class="a" d="M24 62h14v12H24zM162 62h14v12h-14z"/><path class="st" d="M24 66c-10 2-14 12-10 26M176 66c10 2 14 12 10 26" style="stroke-width:5"/><path class="m" d="M90 72h20v8H90z"/></svg>',
+ bulb:'<svg '+V+'><circle class="l" cx="100" cy="62" r="42" style="stroke:var(--ill-metal);stroke-width:3"/><circle class="a" cx="100" cy="62" r="18" opacity=".25"/><path class="st" d="M100 8v-2M146 20l3-3M54 20l-3-3" style="stroke:var(--naranja);stroke-width:4"/><path class="l" d="M74 92h52l-6 20H80z" style="stroke:var(--ill-metal);stroke-width:3"/><rect class="m" x="80" y="112" width="40" height="8" rx="2"/><rect class="b" x="80" y="120" width="40" height="6"/><rect class="m" x="80" y="126" width="40" height="8" rx="2"/><path class="b" d="M86 134h28l-6 12h-16z"/></svg>',
+ helmet:'<svg '+V+'><path class="a" d="M36 104c0-40 28-68 64-68s64 28 64 68z"/><path class="ao" d="M92 38h16v66H92z"/><path class="ao" d="M62 50c6-4 12-7 18-8v62H66c0-20-2-38-4-54zM138 50c-6-4-12-7-18-8v62h14c0-20 2-38 4-54z" opacity=".55"/><rect class="b" x="22" y="100" width="156" height="14" rx="7"/><path class="m" d="M60 114h80v8H60z"/></svg>',
+ truck:'<svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg"><rect class="m" x="10" y="166" width="300" height="6" rx="3" opacity=".5"/><rect class="b" x="20" y="44" width="180" height="104" rx="10"/><rect class="a" x="20" y="44" width="180" height="22" rx="10"/><rect class="a" x="20" y="56" width="180" height="10"/><rect x="40" y="82" width="54" height="40" rx="9" fill="#ED681B"/><rect x="73" y="82" width="21" height="16" fill="#676767"/><circle cx="74" cy="98" r="14" fill="#fff"/><circle cx="74" cy="98" r="8" fill="#676767"/><polygon points="72,97 75,100 84,91 81,88" fill="#fff"/><rect class="l" x="104" y="96" width="78" height="8" rx="4"/><rect class="m" x="104" y="110" width="54" height="6" rx="3"/><path class="a" d="M200 72h52c8 0 14 4 18 10l26 36c2 3 4 7 4 11v19H200z"/><path class="l" d="M214 84h36c4 0 7 2 9 5l16 24h-61z"/><rect class="b" x="200" y="140" width="104" height="10" rx="4"/><circle class="b" cx="66" cy="152" r="20"/><circle class="m" cx="66" cy="152" r="8"/><circle class="b" cx="150" cy="152" r="20"/><circle class="m" cx="150" cy="152" r="8"/><circle class="b" cx="258" cy="152" r="20"/><circle class="m" cx="258" cy="152" r="8"/></svg>'
+};
+
+/* ---------- Datos de marca y catálogo ---------- */
+var CATS = [
+ {id:"electricas", name:"Herramientas eléctricas", short:"Eléctricas", ill:"drill", note:"Taladros, amoladoras, sierras"},
+ {id:"manuales", name:"Herramientas manuales", short:"Manuales", ill:"hammer", note:"Winchas, martillos, llaves"},
+ {id:"seguridad", name:"Seguridad industrial", short:"Seguridad", ill:"helmet", note:"Respiradores, lentes, EPP"},
+ {id:"iluminacion", name:"Iluminación y electricidad", short:"Iluminación", ill:"bulb", note:"Focos LED y accesorios"},
+ {id:"construccion", name:"Construcción y químicos", short:"Construcción", ill:"shovel", note:"Palas, siliconas, selladores"}
+];
+var BRANDS = ["Casco","Kulkoni","X-Trema","ProteGtus","Tribu","Ayllu","Fluss","Stanley","DeWalt","Black+Decker","Total","Tramontina","Bellota","Nicholson","Philips","3M","Abro"];
+var P = [
+ {id:1,n:"Taladro percutor inalámbrico 20V",b:"DeWalt",c:"electricas",p:689.90,o:799.90,s:48,m:120,ill:"drill",t:"Oferta",f:["Batería de litio 20V","Mandril de 1/2\"","Modo percutor para concreto"]},
+ {id:2,n:"Amoladora angular 4½\" 750 W",b:"Total",c:"electricas",p:189.90,s:120,m:150,ill:"grinder",t:"Nuevo",f:["Potencia 750 W","Disco de 115 mm","Mango lateral de 2 posiciones"]},
+ {id:3,n:"Sierra circular 7¼\" 1400 W",b:"Black+Decker",c:"electricas",p:459.00,o:519.00,s:15,m:80,ill:"saw",f:["Potencia 1400 W","Disco de 184 mm","Corte en bisel hasta 45°"]},
+ {id:4,n:"Rotomartillo SDS Plus 800 W",b:"Total",c:"electricas",p:379.90,s:36,m:80,ill:"hammerdrill",f:["Encastre SDS Plus","3 modos de trabajo","Incluye maletín"]},
+ {id:5,n:"Sierra caladora 600 W",b:"Black+Decker",c:"electricas",p:239.90,s:22,m:80,ill:"jigsaw",t:"Nuevo",f:["Potencia 600 W","Velocidad variable","Base inclinable"]},
+ {id:6,n:"Wincha Global 8 m",b:"Stanley",c:"manuales",p:39.90,s:300,m:300,ill:"tape",f:["Cinta de 8 m","Freno de cinta","Carcasa con goma"]},
+ {id:7,n:"Martillo de uña 16 oz",b:"Stanley",c:"manuales",p:54.90,s:210,m:300,ill:"hammer",f:["Cabeza de acero forjado","Mango antivibración","Peso 16 oz"]},
+ {id:8,n:"Juego de destornilladores 6 piezas",b:"Stanley",c:"manuales",p:49.90,o:59.90,s:96,m:200,ill:"screw",t:"Oferta",f:["Puntas planas y estrella","Mango ergonómico","Punta imantada"]},
+ {id:9,n:"Alicate universal 8\"",b:"Tramontina",c:"manuales",p:32.50,s:140,m:200,ill:"pliers",f:["Acero al carbono","Mango aislado","Largo 8\""]},
+ {id:10,n:"Juego de llaves mixtas 12 piezas",b:"Total",c:"manuales",p:129.00,s:60,m:120,ill:"wrench",f:["Medidas de 8 a 19 mm","Acero cromo vanadio","Estuche organizador"]},
+ {id:11,n:"Lima plana bastarda 10\"",b:"Nicholson",c:"manuales",p:28.90,s:12,m:100,ill:"file",f:["Picado bastardo","Largo 10\"","Para metal y madera"]},
+ {id:12,n:"Pala cuchara con mango",b:"Bellota",c:"construccion",p:64.90,s:75,m:150,ill:"shovel",f:["Hoja de acero templado","Mango de madera","Para obra y jardín"]},
+ {id:13,n:"Silicona transparente 280 ml",b:"Abro",c:"construccion",p:12.90,s:480,m:500,ill:"cartridge",t:"Nuevo",f:["Cartucho de 280 ml","Uso interior y exterior","Resistente a la humedad"]},
+ {id:14,n:"Respirador media cara",b:"3M",c:"seguridad",p:89.90,s:40,m:100,ill:"mask",f:["Doble cartucho","Silicona suave","Arnés ajustable"]},
+ {id:15,n:"Lentes de seguridad claros",b:"3M",c:"seguridad",p:14.90,o:18.90,s:350,m:400,ill:"glasses",t:"Oferta",f:["Luna de policarbonato","Protección lateral","Uso en obra y taller"]},
+ {id:16,n:"Foco LED 12 W luz día",b:"Philips",c:"iluminacion",p:9.90,s:900,m:900,ill:"bulb",f:["Potencia 12 W","Luz día","Rosca E27"]}
+];
+var byId = {}; P.forEach(function(x){byId[x.id]=x});
+var money = function(n){return "S/ "+n.toLocaleString("es-PE",{minimumFractionDigits:2,maximumFractionDigits:2})};
+var esc = function(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+
+/* ---------- Estado persistente (por visitante) ---------- */
+function load(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var cart = load("gulda_cart",{});
+var favs = load("gulda_favs",[]);
+Object.keys(cart).forEach(function(k){if(!byId[k])delete cart[k]});
+favs = favs.filter(function(id){return byId[id]});
+
+/* ---------- Inyectar ilustraciones ---------- */
+$$("[data-ill]").forEach(function(el){el.innerHTML = ILL[el.getAttribute("data-ill")]||""});
+
+/* ---------- Ticker barra superior ---------- */
+(function(){
+  var items=$$(".ticker span"),i=0;
+  if(items.length<2)return;
+  setInterval(function(){
+    var cur=items[i];cur.classList.remove("on");cur.classList.add("out");
+    i=(i+1)%items.length;var nx=items[i];nx.classList.remove("out");
+    void nx.offsetWidth;nx.classList.add("on");
+    setTimeout(function(){cur.classList.remove("out")},520);
+  },4200);
+})();
+
+/* ---------- Categorías, mega menú, drawer y footer ---------- */
+function count(c){return P.filter(function(x){return x.c===c}).length}
+$("#cats").innerHTML = CATS.map(function(c,i){
+  return '<a class="cat'+(i===0?' featured':'')+'" href="#productos" data-tab="'+c.id+'" data-reveal><div class="c-ill" aria-hidden="true">'+ILL[c.ill]+'</div><small>'+c.note+'</small><h3>'+c.name+'</h3><span class="c-go">Ver '+count(c.id)+' productos</span></a>';
+}).join("");
+$("#mega").innerHTML = CATS.map(function(c){
+  return '<a href="#productos" data-tab="'+c.id+'"><span class="m-ic">'+ILL[c.ill]+'</span>'+c.name+'</a>';
+}).join("") + '<a href="#productos" data-tab="all"><span class="m-ic">'+ILL.wrench+'</span>Ver todo el catálogo</a>';
+$("#mnav").innerHTML = '<a href="#inicio">Inicio</a>' +
+  '<h3>Categorías</h3>' + CATS.map(function(c){return '<a href="#productos" data-tab="'+c.id+'"><span class="m-ic">'+ILL[c.ill]+'</span>'+c.name+'</a>'}).join("") +
+  '<h3>Gulda</h3><a href="#marcas">Marcas</a><a href="#pasos">Cómo comprar</a><a href="#contacto">Hazte cliente</a>' +
+  '<div class="dr-contact">Pedidos por WhatsApp<a href="https://wa.me/'+WA+'" target="_blank" rel="noopener">924 610 434</a>Central<a href="tel:016176900">01 617 6900</a></div>';
+$("#footCats").innerHTML = CATS.map(function(c){return '<li><a href="#productos" data-tab="'+c.id+'">'+c.name+'</a></li>'}).join("");
+$("#yr").textContent = new Date().getFullYear();
+
+/* ---------- Marcas (marquesina infinita) ---------- */
+var bl = BRANDS.map(function(b){return '<li>'+esc(b)+'</li>'}).join("");
+$("#brandList").innerHTML = bl + BRANDS.map(function(b){return '<li aria-hidden="true">'+esc(b)+'</li>'}).join("");
+
+/* ---------- Pestañas y grilla de productos ---------- */
+var tabsDef = [{id:"all",short:"Todos"}].concat(CATS);
+var current = "all";
+$("#tabs").innerHTML = tabsDef.map(function(t){
+  return '<button class="tab" role="tab" data-t="'+t.id+'" aria-selected="'+(t.id==="all")+'">'+t.short+'</button>';
+}).join("");
+function cardHTML(x,i){
+  var pct = Math.round(x.s/x.m*100), low = x.s<25;
+  var tag = x.o ? '<span class="tag off">-'+Math.round((1-x.p/x.o)*100)+'%</span>' : (x.t ? '<span class="tag">'+x.t+'</span>' : '');
+  var fav = favs.indexOf(x.id)>-1;
+  var inCart = cart[x.id];
+  return '<article class="card enter" style="animation-delay:'+(i*45)+'ms" data-id="'+x.id+'">'+
+    '<button class="ill" data-qv="'+x.id+'" aria-label="Vista rápida de '+esc(x.n)+'">'+ILL[x.ill]+'</button>'+tag+
+    '<button class="heart" data-fav="'+x.id+'" aria-pressed="'+fav+'" aria-label="Guardar en favoritos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>'+
+    '<span class="qv" aria-hidden="true">Vista rápida</span>'+
+    '<div class="c-body"><span class="c-brand">'+esc(x.b)+'</span><h3 class="c-name">'+esc(x.n)+'</h3>'+
+    '<div class="c-price"><b>'+money(x.p)+'</b>'+(x.o?'<s>'+money(x.o)+'</s>':'')+'</div>'+
+    '<div class="stock">'+(low?'Últimas '+x.s+' unidades':'Disponible: '+x.s)+'<div class="sb"><i class="'+(low?'low':'')+'" data-w="'+pct+'"></i></div></div>'+
+    '<button class="btn btn-primary add'+(inCart?' done':'')+'" data-add="'+x.id+'">'+(inCart?'En tu pedido ('+inCart+')':'Agregar al pedido')+'</button></div></article>';
+}
+function render(){
+  var list = P.filter(function(x){return current==="all"||x.c===current});
+  var s = $("#sort").value;
+  list = list.slice();
+  if(s==="asc")list.sort(function(a,b){return a.p-b.p});
+  if(s==="desc")list.sort(function(a,b){return b.p-a.p});
+  if(s==="name")list.sort(function(a,b){return a.n.localeCompare(b.n,"es")});
+  if(s==="brand")list.sort(function(a,b){return a.b.localeCompare(b.b,"es")||a.n.localeCompare(b.n,"es")});
+  var g=$("#grid");
+  g.innerHTML = list.length ? list.map(cardHTML).join("") : '<p class="empty-grid">No hay productos en esta categoría. Elige otra pestaña.</p>';
+  $("#countLabel").textContent = list.length+" productos";
+  requestAnimationFrame(function(){requestAnimationFrame(function(){
+    $$(".sb i",g).forEach(function(b){b.style.width=b.getAttribute("data-w")+"%"});
+  })});
+}
+function setTab(id){
+  if(!tabsDef.some(function(t){return t.id===id}))id="all";
+  current=id;
+  $$(".tab").forEach(function(b){b.setAttribute("aria-selected",String(b.getAttribute("data-t")===id))});
+  var act=$('.tab[data-t="'+id+'"]'); if(act&&act.scrollIntoView)act.scrollIntoView({block:"nearest",inline:"center",behavior:reduce?"auto":"smooth"});
+  render();
+}
+$("#tabs").addEventListener("click",function(e){var b=e.target.closest(".tab");if(b)setTab(b.getAttribute("data-t"))});
+$("#tabs").addEventListener("keydown",function(e){
+  if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft")return;
+  var tabs=$$(".tab"),i=tabs.indexOf(document.activeElement);if(i<0)return;
+  var n=tabs[(i+(e.key==="ArrowRight"?1:tabs.length-1))%tabs.length];n.focus();n.click();
+});
+$("#sort").addEventListener("change",render);
+
+/* Enlaces con data-tab en todo el sitio */
+document.addEventListener("click",function(e){
+  var a=e.target.closest("[data-tab]");
+  if(a){setTab(a.getAttribute("data-tab"));closeAll();closeMega();}
+});
+
+/* ---------- Toast ---------- */
+var tt;
+function toast(msg){
+  $("#toastMsg").textContent=msg;var t=$("#toast");t.classList.add("show");
+  clearTimeout(tt);tt=setTimeout(function(){t.classList.remove("show")},2600);
+}
+
+/* ---------- Favoritos ---------- */
+function updFav(){$("#favCount").textContent=favs.length}
+document.addEventListener("click",function(e){
+  var h=e.target.closest("[data-fav]");if(!h)return;
+  var id=+h.getAttribute("data-fav"),i=favs.indexOf(id);
+  if(i>-1){favs.splice(i,1);toast("Quitado de favoritos")}else{favs.push(id);toast("Guardado en favoritos")}
+  h.setAttribute("aria-pressed",String(i<0));h.classList.remove("pop");void h.offsetWidth;h.classList.add("pop");
+  save("gulda_favs",favs);updFav();
+});
+$("#favBtn").addEventListener("click",function(){
+  if(!favs.length){toast("Aún no guardas favoritos. Toca el corazón de un producto.");return}
+  $("#q").value="";openSuggest(favs.map(function(id){return byId[id]}),"",true);$("#q").focus();
+});
+
+/* ---------- Pedido (carrito) ---------- */
+function totals(){var n=0,t=0;Object.keys(cart).forEach(function(k){n+=cart[k];t+=cart[k]*byId[k].p});return {n:n,t:t}}
+function updCart(bump){
+  var r=totals();
+  var c=$("#cartCount");c.textContent=r.n;
+  if(bump){c.classList.remove("bump");void c.offsetWidth;c.classList.add("bump")}
+  $("#cartTotalTop").textContent=money(r.t);$("#cartTotal").textContent=money(r.t);
+  var keys=Object.keys(cart);
+  $("#cartFoot").style.display=keys.length?"grid":"none";
+  $("#cartBody").innerHTML = keys.length ? keys.map(function(k){var x=byId[k];
+    return '<div class="ci"><div class="s-ill">'+ILL[x.ill]+'</div><div><h4>'+esc(x.n)+'</h4><small>'+esc(x.b)+' · '+money(x.p)+'</small><br>'+
+      '<span class="qty"><button data-q="'+k+'" data-d="-1" aria-label="Quitar una unidad">−</button><span>'+cart[k]+'</span><button data-q="'+k+'" data-d="1" aria-label="Agregar una unidad">+</button></span></div>'+
+      '<div><div class="line">'+money(x.p*cart[k])+'</div><button class="rm" data-rm="'+k+'">Quitar</button></div></div>';
+  }).join("") : '<div class="cart-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1.3"/><circle cx="17" cy="20.5" r="1.3"/></svg><p>Tu pedido está vacío.</p><p style="margin-top:6px">Agrega productos del catálogo y envíalos a tu asesor.</p><a class="btn btn-primary" style="margin-top:16px" href="#productos" data-close>Ver catálogo</a></div>';
+  $$(".card").forEach(function(cd){var id=cd.getAttribute("data-id"),b=$(".add",cd);if(!b)return;
+    if(cart[id]){b.classList.add("done");b.textContent="En tu pedido ("+cart[id]+")"}else{b.classList.remove("done");b.textContent="Agregar al pedido"}});
+  save("gulda_cart",cart);
+}
+function fly(fromEl,x){
+  if(reduce||!fromEl)return;
+  var r=fromEl.getBoundingClientRect(),to=$("#cartBtn").getBoundingClientRect();
+  var f=document.createElement("div");f.className="flyer";f.innerHTML=ILL[x.ill];document.body.appendChild(f);
+  var sx=r.left+r.width/2-30,sy=r.top+r.height/2-24,ex=to.left+to.width/2-30,ey=to.top+to.height/2-24;
+  if(!f.animate){f.remove();return}
+  f.animate([{transform:"translate("+sx+"px,"+sy+"px) scale(1)",opacity:1},{transform:"translate("+((sx+ex)/2)+"px,"+(Math.min(sy,ey)-80)+"px) scale(.8)",opacity:1,offset:.5},{transform:"translate("+ex+"px,"+ey+"px) scale(.25)",opacity:.3}],{duration:750,easing:"cubic-bezier(.5,0,.3,1)"}).onfinish=function(){f.remove()};
+  f.style.left="0";f.style.top="0";
+}
+function addToCart(id,q,src){
+  var x=byId[id];if(!x)return;
+  cart[id]=(cart[id]||0)+(q||1);
+  fly(src,x);
+  setTimeout(function(){updCart(true)},reduce?0:600);
+  toast(x.n+" agregado a tu pedido");
+}
+document.addEventListener("click",function(e){
+  var a=e.target.closest("[data-add]");if(a){var card=a.closest(".card");addToCart(+a.getAttribute("data-add"),1,card?$(".ill",card):a);return}
+  var q=e.target.closest("[data-q]");if(q){var k=q.getAttribute("data-q");cart[k]+=+q.getAttribute("data-d");if(cart[k]<1)delete cart[k];updCart();return}
+  var rm=e.target.closest("[data-rm]");if(rm){delete cart[rm.getAttribute("data-rm")];updCart();toast("Producto quitado del pedido")}
+});
+$("#clearCart").addEventListener("click",function(){cart={};updCart();toast("Pedido vaciado")});
+$("#sendOrder").addEventListener("click",function(){
+  var keys=Object.keys(cart);if(!keys.length)return;
+  var store=$("#cartStore").value.trim();
+  var lines=keys.map(function(k){var x=byId[k];return "• "+cart[k]+" x "+x.n+" ("+x.b+")"});
+  var msg="Hola Gulda, quiero cotizar este pedido"+(store?" para "+store:"")+":\n"+lines.join("\n")+"\nTotal referencial: "+money(totals().t);
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank","noopener");
+});
+
+/* ---------- Drawers ---------- */
+var lastFocus=null;
+function openDrawer(d,btn){
+  closeAll();lastFocus=btn||document.activeElement;
+  d.classList.add("open");d.setAttribute("aria-hidden","false");$("#scrim").classList.add("open");
+  if(btn)btn.setAttribute("aria-expanded","true");document.body.style.overflow="hidden";
+  var f=$("button,a,input",d);if(f)setTimeout(function(){f.focus()},50);
+}
+function closeAll(){
+  $$(".drawer.open").forEach(function(d){d.classList.remove("open");d.setAttribute("aria-hidden","true")});
+  $("#scrim").classList.remove("open");document.body.style.overflow="";
+  $("#menuBtn").setAttribute("aria-expanded","false");$("#cartBtn").setAttribute("aria-expanded","false");
+}
+$("#menuBtn").addEventListener("click",function(){openDrawer($("#menuDrawer"),this)});
+$("#cartBtn").addEventListener("click",function(){openDrawer($("#cartDrawer"),this)});
+$("#scrim").addEventListener("click",closeAll);
+document.addEventListener("click",function(e){
+  if(e.target.closest("[data-close]")){closeAll();if(lastFocus)lastFocus.focus()}
+  if(e.target.closest("#mnav a"))closeAll();
+});
+
+/* ---------- Mega menú ---------- */
+var megaBtn=$("#megaBtn"),mega=$("#mega");
+function closeMega(){mega.classList.remove("open");megaBtn.setAttribute("aria-expanded","false")}
+megaBtn.addEventListener("click",function(e){e.stopPropagation();var o=mega.classList.toggle("open");megaBtn.setAttribute("aria-expanded",String(o))});
+document.addEventListener("click",function(e){if(!e.target.closest("#mega")&&e.target!==megaBtn)closeMega()});
+
+/* ---------- Vista rápida ---------- */
+var dlg=$("#qvDialog");
+function openQV(id){
+  var x=byId[id];if(!x)return;
+  $("#qvContent").innerHTML='<div class="qv-ill">'+ILL[x.ill]+'</div><div class="qv-info"><span class="c-brand">'+esc(x.b)+'</span><h2 id="qvTitle">'+esc(x.n)+'</h2>'+
+   '<div class="c-price"><b style="font-size:1.6rem">'+money(x.p)+'</b>'+(x.o?'<s>'+money(x.o)+'</s>':'')+'</div>'+
+   '<ul>'+x.f.map(function(f){return '<li>'+esc(f)+'</li>'}).join("")+'</ul>'+
+   '<span class="stock">Disponible: '+x.s+' unidades</span>'+
+   '<div class="qv-actions"><span class="qty" id="qvQty"><button data-qd="-1" aria-label="Menos">−</button><span>1</span><button data-qd="1" aria-label="Más">+</button></span>'+
+   '<button class="btn btn-primary" id="qvAdd">Agregar al pedido</button></div>'+
+   '<a href="https://wa.me/'+WA+'?text='+encodeURIComponent("Hola Gulda, quiero información de: "+x.n+" ("+x.b+")")+'" target="_blank" rel="noopener" style="font-size:.88rem;color:var(--accent-text);font-weight:700">Consultar por WhatsApp</a></div>';
+  var q=1;
+  $("#qvQty").addEventListener("click",function(e){var b=e.target.closest("[data-qd]");if(!b)return;q=Math.max(1,q+(+b.getAttribute("data-qd")));$("#qvQty span").textContent=q});
+  $("#qvAdd").addEventListener("click",function(){addToCart(x.id,q,$(".qv-ill svg",dlg));dlg.close()});
+  if(dlg.showModal)dlg.showModal();else dlg.setAttribute("open","");
+}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-qv]");if(b)openQV(+b.getAttribute("data-qv"))});
+$("#qvClose").addEventListener("click",function(){dlg.close()});
+dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
+
+/* ---------- Buscador con sugerencias ---------- */
+var q=$("#q"),sg=$("#suggest"),act=-1;
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+function hl(text,term){if(!term)return esc(text);var i=norm(text).indexOf(norm(term));if(i<0)return esc(text);return esc(text.slice(0,i))+"<mark>"+esc(text.slice(i,i+term.length))+"</mark>"+esc(text.slice(i+term.length))}
+function openSuggest(list,term,isFav){
+  act=-1;
+  sg.innerHTML = list.length ? (isFav?'<div class="empty" style="padding:10px 12px 4px"><b>Tus favoritos</b></div>':'') + list.slice(0,7).map(function(x){
+    var cat=CATS.filter(function(c){return c.id===x.c})[0];
+    return '<button role="option" data-qv="'+x.id+'"><span class="s-ill">'+ILL[x.ill]+'</span><span><span>'+hl(x.n,term)+'</span><small>'+hl(x.b,term)+' · '+cat.short+' · '+money(x.p)+'</small></span></button>';
+  }).join("") : '<div class="empty">Sin resultados para “'+esc(term)+'”. Prueba con otra palabra o pregunta a tu asesor por WhatsApp.</div>';
+  sg.classList.add("open");q.setAttribute("aria-expanded","true");
+}
+function closeSuggest(){sg.classList.remove("open");q.setAttribute("aria-expanded","false")}
+function search(term){var t=norm(term.trim());if(!t)return [];return P.filter(function(x){var c=CATS.filter(function(k){return k.id===x.c})[0];return norm(x.n+" "+x.b+" "+c.name).indexOf(t)>-1})}
+q.addEventListener("input",function(){var v=q.value;if(v.trim().length<2){closeSuggest();return}openSuggest(search(v),v.trim())});
+q.addEventListener("keydown",function(e){
+  var opts=$$("button",sg);if(!sg.classList.contains("open")||!opts.length){if(e.key==="Escape")closeSuggest();return}
+  if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();act=(act+(e.key==="ArrowDown"?1:-1)+opts.length)%opts.length;opts.forEach(function(o,i){o.classList.toggle("act",i===act)});opts[act].scrollIntoView({block:"nearest"})}
+  if(e.key==="Enter"&&act>-1){e.preventDefault();opts[act].click()}
+  if(e.key==="Escape")closeSuggest();
+});
+document.addEventListener("click",function(e){if(!e.target.closest("#search")&&!e.target.closest("#favBtn"))closeSuggest();if(e.target.closest("#suggest [data-qv]"))closeSuggest()});
+$("#searchForm").addEventListener("submit",function(e){
+  e.preventDefault();var v=q.value.trim();if(!v)return;var r=search(v);closeSuggest();
+  if(r.length){var cats=r.map(function(x){return x.c}).filter(function(c,i,a){return a.indexOf(c)===i});setTab(cats.length===1?cats[0]:"all");
+    document.getElementById("productos").scrollIntoView({behavior:reduce?"auto":"smooth"});
+    setTimeout(function(){r.forEach(function(x){var c=$('.card[data-id="'+x.id+'"]');if(c&&c.animate)c.animate([{boxShadow:"0 0 0 0 rgba(237,104,27,.7)"},{boxShadow:"0 0 0 10px rgba(237,104,27,0)"}],{duration:900,iterations:2})})},500);
+    toast(r.length+" resultado"+(r.length>1?"s":"")+" para “"+v+"”");
+  }else toast("Sin resultados para “"+v+"”");
+});
+
+/* ---------- Hero slider ---------- */
+(function(){
+  var track=$("#slides"),slides=$$(".slide",track),dots=$("#dots"),bar=$("#heroBar"),idx=0,timer=null,DUR=6500,paused=false,start=0,raf;
+  dots.innerHTML=slides.map(function(_,i){return '<button aria-label="Ir a diapositiva '+(i+1)+'"'+(i===0?' aria-current="true"':'')+'></button>'}).join("");
+  var dbs=$$("button",dots);
+  function go(i){
+    idx=(i+slides.length)%slides.length;
+    track.style.transform="translateX("+(-idx*100)+"%)";
+    slides.forEach(function(s,k){s.classList.toggle("active",k===idx);s.setAttribute("aria-hidden",String(k!==idx));$$("a,button",s).forEach(function(el){el.tabIndex=k===idx?0:-1})});
+    dbs.forEach(function(d,k){d.setAttribute("aria-current",String(k===idx))});
+    restart();
+  }
+  function tick(t){if(!start)start=t;if(paused){start=t-(parseFloat(bar.dataset.p||0)*DUR);raf=requestAnimationFrame(tick);return}
+    var p=Math.min((t-start)/DUR,1);bar.dataset.p=p;bar.style.width=(p*100)+"%";if(p>=1){go(idx+1);return}raf=requestAnimationFrame(tick)}
+  function restart(){cancelAnimationFrame(raf);start=0;bar.dataset.p=0;bar.style.width="0";if(!reduce)raf=requestAnimationFrame(tick)}
+  dots.addEventListener("click",function(e){var i=dbs.indexOf(e.target);if(i>-1)go(i)});
+  $("#prev").addEventListener("click",function(){go(idx-1)});
+  $("#next").addEventListener("click",function(){go(idx+1)});
+  var hero=$(".hero");
+  hero.addEventListener("mouseenter",function(){paused=true});hero.addEventListener("mouseleave",function(){paused=false});
+  hero.addEventListener("focusin",function(){paused=true});hero.addEventListener("focusout",function(){paused=false});
+  hero.addEventListener("keydown",function(e){if(e.key==="ArrowLeft")go(idx-1);if(e.key==="ArrowRight")go(idx+1)});
+  var sx=null,sy=null;
+  track.addEventListener("touchstart",function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+  track.addEventListener("touchend",function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))go(idx+(dx<0?1:-1));sx=null},{passive:true});
+  document.addEventListener("visibilitychange",function(){paused=document.hidden});
+  go(0);
+})();
+
+/* ---------- Cuenta regresiva de la oferta del día ---------- */
+(function(){
+  var el=$("#countdown");
+  function upd(){var n=new Date(),m=new Date(n);m.setHours(24,0,0,0);var d=Math.max(0,m-n);
+    var h=Math.floor(d/36e5),mi=Math.floor(d%36e5/6e4),s=Math.floor(d%6e4/1e3);
+    $('[data-u="h"]',el).textContent=String(h).padStart(2,"0");$('[data-u="m"]',el).textContent=String(mi).padStart(2,"0");$('[data-u="s"]',el).textContent=String(s).padStart(2,"0");}
+  upd();setInterval(upd,1000);
+})();
+
+/* ---------- Scroll: header, progreso, volver arriba ---------- */
+(function(){
+  var hd=$("#header"),pr=$("#progress"),tp=$("#totop"),ticking=false;
+  function on(){var y=window.scrollY,h=document.documentElement.scrollHeight-innerHeight;
+    hd.classList.toggle("scrolled",y>40);pr.style.width=(h>0?y/h*100:0)+"%";tp.classList.toggle("show",y>700);ticking=false}
+  window.addEventListener("scroll",function(){if(!ticking){requestAnimationFrame(on);ticking=true}},{passive:true});on();
+  tp.addEventListener("click",function(){window.scrollTo({top:0,behavior:reduce?"auto":"smooth"})});
+})();
+
+/* ---------- Revelado al hacer scroll ---------- */
+(function(){
+  var els=$$("[data-reveal]");
+  if(reduce||!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var t=en.target;var sib=t.parentElement?$$("[data-reveal]",t.parentElement).indexOf(t):0;t.style.transitionDelay=(Math.max(0,sib)%5*70)+"ms";t.classList.add("in");io.unobserve(t)}})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+  els.forEach(function(e){io.observe(e)});
+})();
+
+/* ---------- Formulario Hazte cliente ---------- */
+$("#leadForm").addEventListener("submit",function(e){
+  e.preventDefault();var ok=true;
+  function chk(id,test){var f=$("#"+id).closest(".field"),v=$("#"+id).value.trim(),good=test(v);f.classList.toggle("err",!good);if(!good&&ok){$("#"+id).focus();ok=false}return v}
+  var name=chk("fName",function(v){return v.length>1});
+  var store=chk("fStore",function(v){return v.length>1});
+  var ruc=chk("fRuc",function(v){return v===""||/^\d{11}$/.test(v)});
+  var phone=chk("fPhone",function(v){return /^9\d{8}$/.test(v.replace(/\s/g,""))});
+  if(!ok){toast("Revisa los campos marcados");return}
+  var msg="Hola Gulda, quiero abrir mi cuenta ferretera.\nNombre: "+name+"\nNegocio: "+store+(ruc?"\nRUC: "+ruc:"")+"\nCelular: "+phone+"\nCiudad: "+$("#fCity").value+($("#fMsg").value.trim()?"\nNecesito: "+$("#fMsg").value.trim():"");
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank","noopener");
+  toast("Abrimos WhatsApp con tus datos");
+});
+$$("#leadForm input").forEach(function(i){i.addEventListener("input",function(){i.closest(".field").classList.remove("err")})});
+
+/* ---------- Teclado global ---------- */
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape"){closeAll();closeMega();closeSuggest()}
+  if(e.key==="/"&&document.activeElement.tagName!=="INPUT"&&document.activeElement.tagName!=="TEXTAREA"){e.preventDefault();q.focus()}
+});
+
+render();updFav();updCart();
+})();
+</script>
+</body>
+</html>
